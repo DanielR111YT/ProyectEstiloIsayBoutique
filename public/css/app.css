@@ -1,0 +1,943 @@
+:root{
+    --main-color:#d3ad7f;
+    --black:#13131a;
+    --bg:#010103;
+    --border:.1rem solid rgba(255,255,255,.3);
+}
+
+*{
+    font-family: 'Roboto', sans-serif;
+    margin:0; padding:0;
+    box-sizing: border-box;
+    outline: none; border:none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: .2s linear;
+}
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding-top: 9rem;
+    scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar{
+    width: .8rem;
+}
+
+html::-webkit-scrollbar-track{
+    background: transparent;
+}
+
+html::-webkit-scrollbar-thumb{
+    background: #fff;
+    border-radius: 5rem;
+}
+
+body{
+    background: var(--bg);
+}
+
+body.hide-header header {
+    opacity: 0;
+    pointer-events: none; 
+}
+
+section{
+    padding:2rem 7%;
+
+}
+
+.heading{
+    text-align: center;
+    color:#fff;
+    text-transform: uppercase;
+    padding-bottom: 3.5rem;
+    font-size: 4rem;
+}
+
+.heading span{
+    color:var(--main-color);
+    text-transform: uppercase;
+}
+
+.btn{
+    margin-top: 1rem;
+    display: inline-block;
+    padding:.9rem 3rem;
+    font-size: 1.7rem;
+    color:#fff;
+    background: var(--main-color);
+    cursor: pointer;
+}
+
+.btn:hover{
+    letter-spacing: .2rem;
+}
+
+/*-----------------Intro------------------*/
+
+.intro {
+    position: relative;
+    height: 100vh; /* Utilizar altura completa de la pantalla */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: #c40404;
+    overflow: hidden; /* Ocultar el desbordamiento de la imagen */
+}
+
+.intro p {
+    color: #cc2727; /* Color gris oscuro */
+    font-size: 1.6rem;
+    margin-top: 400px;
+}
+
+
+.logo {
+    font-size: 2.5rem;
+    color: var(--black) !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-image: linear-gradient(to right, #080808, #ffd700); 
+    background-clip: text;
+}
+
+
+.intro .logo .logo-parts {
+    position: absolute;
+    transform-origin: center;
+    /* Aquí puedes agregar transformaciones específicas para cada parte del logo si es necesario */
+}
+
+
+/*-----------------Header------------------*/
+.header{
+    
+    height: 80px;
+    background: var(--bg);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:1.5rem 7%;
+    border-bottom: var(--border);
+    position: fixed;
+    top:0; left: 0; right: 0;
+    z-index: 10000;
+}
+
+.header .logo img{
+    height: 7rem;
+    background-color: white;
+}
+
+.header .navbar a{
+    margin:0 1rem;
+    font-size: 1.6rem;
+    color:#fff;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.header .navbar a:hover{
+    color:var(--main-color);
+    border-bottom: .1rem solid var(--main-color);
+    padding-bottom: .5rem;
+}
+
+.header .icons div{
+    color:#fff;
+    cursor: pointer;
+    font-size: 2.5rem;
+    margin-left: 2rem;
+}
+
+.header .icons div:hover{
+    color:var(--main-color);
+}
+
+#menu-btn{
+    display: none;
+}
+
+.header .search-form{
+    
+    position: absolute;
+    top:115%; right: 7%;
+    background: #fff;
+    width: 50rem;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    transform: scaleY(0);
+    transform-origin: top;
+}
+
+.header .search-form.active{
+    transform: scaleY(1);
+}
+
+.header .search-form input{
+    height: 100%;
+    width: 100%;
+    font-size: 1.6rem;
+    color:var(--black);
+    padding:1rem;
+    text-transform: none;
+}
+
+.header .search-form label{
+    cursor: pointer;
+    font-size: 2.2rem;
+    margin-right: 1.5rem;
+    color:var(--black);
+}
+
+.header .search-form label:hover{
+    color:var(--main-color);
+}
+
+.header .cart-items-container{
+    position: absolute;
+    top:100%; right: -100%;
+    height: calc(100vh - 9.5rem);
+    width: 35rem;
+    background: #fff;
+    padding:0 1.5rem;
+}
+
+.container:hover{
+    background-image: url();
+    
+}
+
+.header .cart-items-container.active{
+    right: 0;
+}
+
+.header .cart-items-container .cart-item{
+    position: relative;
+    margin:2rem 0;
+    display: flex;
+    align-items: center;
+    gap:1.5rem;
+}
+
+.header .cart-items-container .cart-item .fa-times{
+    position: absolute;
+    top:1rem; right: 1rem;
+    font-size: 2rem;
+    cursor: pointer;
+    color: var(--black);
+}
+
+.header .cart-items-container .cart-item .fa-times:hover{
+    color:var(--main-color);
+}
+
+.header .cart-items-container .cart-item img{
+    height: 7rem;
+}
+
+.header .cart-items-container .cart-item .content h3{
+    font-size: 2rem;
+    color:var(--black);
+    padding-bottom: .5rem;
+}
+
+.header .cart-items-container .cart-item .content .price{
+    font-size: 1.5rem;
+    color:var(--main-color);
+}
+
+.header .cart-items-container .btn{
+    width: 100%;
+    text-align: center;
+}
+
+
+
+/*-----------------Home------------------*/
+.home {
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    background: url('../img/8fd3a3cb0c04b7becb57dd063809645c.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.home .content{
+    top: 70px;
+    left: 250px;
+    width: 800px;
+    max-width: 60rem;
+    position: relative; 
+    z-index: 1; 
+    border-radius: 10px;
+}
+
+.home .content h2{
+
+    font-size: 5rem;
+    text-transform: uppercase;
+    color:#fff;
+    font-family:Helvetica;
+    text-align: center;
+    backdrop-filter: blur(1 px); 
+    top: -200px;
+    position: absolute;
+    font-size: 5rem;
+    color:#fff;
+    line-height: 5rem; /* Ajusta este valor según sea necesario */
+    
+}
+
+.home .content .text1 {
+    color: rgb(255, 252, 252);
+    text-shadow: 
+    -1px -1px 0 white,
+    1px -1px 0 white,
+    1px 1px 0 white,
+    -1px 1px 0 white 
+}
+
+.home .content .text2 {
+    color: rgb(233, 37, 11);
+    animation: text2 3s ease-in-out infinite;
+}
+
+.home .btn {
+    display: inline-block; /* Muestra el botón en línea con el texto */
+    padding: 10px 20px; /* Relleno interno del botón */
+    background-color: rgb(216, 56, 28); /* Color de fondo del botón */
+    color: #fff; /* Color del texto del botón */
+    text-decoration: none; /* Elimina el subrayado del enlace */
+    text-transform: uppercase; /* Convierte el texto del botón a mayúsculas */
+    font-weight: bold; /* Establece la negrita para el texto del botón */
+    border-radius: 5px; /* Esquinas redondeadas del botón */
+    transition: background-color 0.3s ease; /* Transición suave para el color de fondo */
+    position: absolute; /* Posiciona el botón de forma absoluta */
+    top: 320px; /* Ajusta este valor para mover el botón hacia abajo */
+    left: 50%; /* Centra horizontalmente el botón */
+    transform: translateX(-50%); /* Centra completamente el botón */
+}
+
+
+.home .btn:hover {
+    background-color: #3f2f2a; /* Cambia el color de fondo al pasar el mouse */
+}
+
+@keyframes text2 {
+    0%, 100% {
+        clip-path: polygon(
+            0% 47%,
+            10% 48%,
+            33% 54%,
+            54% 60%,
+            70% 61%,
+            84% 59%, 
+            100% 52%,
+            100% 100%,
+            0% 100%
+        );
+    }
+    50% {
+        clip-path: polygon(
+            0% 60%,
+            15% 65%,
+            34% 66%,
+            51% 62%,
+            67% 50%,
+            84% 45%,
+            100% 100%,
+            0% 100%
+        );
+    }
+}
+
+
+
+
+/*-------------Footer--------------*/
+.footer{
+    background:var(--black);
+    text-align: center;
+}
+
+.footer .share{
+    padding:1rem 0;
+}
+
+.footer .share a{
+    height: 5rem;
+    width: 5rem;
+    line-height: 5rem;
+    font-size: 2rem;
+    color:#fff;
+    border:var(--border);
+    margin:.3rem;
+    border-radius: 50%;
+}
+
+.footer .share a:hover{
+    background-color: var(--main-color);
+}
+
+.footer .links{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding:2rem 0;
+    gap:1rem;
+}
+
+.footer .links a{
+    padding:.7rem 2rem;
+    color:#fff;
+    border:var(--border);
+    font-size: 2rem;
+}
+
+.footer .links a:hover{
+    background:var(--main-color);
+}
+
+.footer .credit{
+    font-size: 2rem;
+    color:#fff;
+    font-weight: lighter;
+    padding:1.5rem;
+}
+
+.footer .credit span{
+    color:var(--main-color);
+}
+
+
+/* ------------------------About ============== */
+.about .row{
+    margin-top: 1px;
+    display: flex;
+    align-items: center;
+    background:var(--black);
+    flex-wrap: wrap;
+}
+
+.about h1{
+    margin-top: 120px;
+}
+
+.about .row .image{
+    flex:1 1 45rem;
+}
+
+.about .row .image img{
+    width: 100%;
+}
+.about .row .content{
+    flex:1 1 45rem;
+    padding:2rem;
+}
+
+.about .row .content h3{
+    height: auto;
+    font-size: 3rem;
+    color:#fff;
+}
+
+.about .row .content p{
+    font-size: 1.6rem;
+    color:#ccc;
+    padding:1rem 0;
+    line-height: 1.8;
+}
+
+
+/* MENU DE CATALOGO OPCIONES*/
+.dropdown {
+    display: inline-block;
+    position: relative;
+}
+
+.dropbtn {
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #0e0606;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 12px 16px;
+    text-decoration: none;
+    color: #fff;
+}
+
+/* Estilo para las subopciones del menú desplegable anidado */
+.dropdown-content .sub-dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #0e0606;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    left: 100%; /* Alineado con el borde derecho del botón padre */
+    top: 0; /* Colocado al mismo nivel vertical que el botón padre */
+}
+
+/* Mostrar subopciones al pasar el ratón sobre el menú desplegable anidado */
+.dropdown-content .sub-dropdown:hover .sub-dropdown-content {
+    display: block;
+}
+
+/* Estilo para los enlaces dentro de las subopciones */
+.dropdown-content a, .dropdown-content .sub-dropdown-content a {
+    color: #fff;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Cambiar color al pasar el ratón sobre los enlaces */
+.dropdown-content a:hover, .dropdown-content .sub-dropdown-content a:hover {
+    background-color: #333;
+    color: var(--main-color); /* Utiliza el color principal definido en :root */
+}
+
+/* Mostrar el menú desplegable al pasar el ratón */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+
+/* ------------------CONTACTO---------------------*/
+
+.contact .row {
+    display: flex;
+    background: var(--black);
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.contact .row .map {
+    flex: 1 1 45rem;
+    width: 100%;
+    object-fit: cover;
+    padding: 20px 40px;
+}
+
+.contact .row form {
+    flex: 1 1 45rem;
+    padding: 5rem 2rem;
+    text-align: center;
+}
+
+.contact .row form h3 {
+    text-transform: uppercase;
+    font-size: 3.5rem;
+    color: #fff;
+}
+
+.contact .row form .inputBox {
+    display: flex;
+    align-items: center;
+    margin: 2rem 0;
+    background: var(--bg);
+    border: var(--border);
+}
+
+.contact .row form .inputBox span {
+    color: #fff;
+    font-size: 2rem;
+    padding: 0 2rem;
+}
+
+.contact .row form .inputBox input,
+.contact .row form .inputBox textarea {
+    width: 100%;
+    padding: 2rem;
+    font-size: 1.7rem;
+    color: #fff;
+    text-transform: none;
+    background: none;
+    border: none;
+}
+
+.contact .row form .inputBox textarea {
+    color: #f3efef; 
+}
+
+/*-----------------------------CATALOGOHOMBRE--------------------*/
+
+/* ------------------------------busosHombre----------------- */
+.busos .box-container{
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap:1.5rem;
+}
+
+.container:hover{
+    background-image: url();
+    
+}
+
+.busos h1{
+    margin-top: 120px;
+}
+
+.busos .box-container .box{
+    padding:5rem;
+    text-align: center;
+    border:var(--border);    
+}
+
+.busos .box-container .box img{
+    height: 10rem;
+}
+
+.busos .box-container .box h3{
+    color: #fff;
+    font-size: 2rem;
+    padding:1rem 0;
+}
+
+.busos .box-container .box .price{
+    color: #fff;
+    font-size: 2.5rem;
+    padding:.5rem 0;
+}
+
+.busos .box-container .box .price span{
+    font-size: 1.5rem;
+    text-decoration: line-through;
+    font-weight: lighter;
+}
+
+.busos .box-container .box:hover{
+    background:#fff;
+}
+
+.busos .box-container .box:hover > *{
+    color:var(--black);
+}
+
+/*------------------------------pantalonesHombre---------------- */
+.pantalonesHombre .box-container{
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap:1.5rem;
+}
+
+.pantalonesHombre h1{
+    margin-top: 40px;
+}
+
+.pantalonesHombre .box-container .box{
+    padding:5rem;
+    text-align: center;
+    border:var(--border);    
+}
+
+.pantalonesHombre .box-container .box img{
+    height: 10rem;
+}
+
+.pantalonesHombre .box-container .box h3{
+    color: #fff;
+    font-size: 2rem;
+    padding:1rem 0;
+}
+
+.pantalonesHombre .box-container .box .price{
+    color: #fff;
+    font-size: 2.5rem;
+    padding:.5rem 0;
+}
+
+.pantalonesHombre .box-container .box .price span{
+    font-size: 1.5rem;
+    text-decoration: line-through;
+    font-weight: lighter;
+}
+
+.pantalonesHombre .box-container .box:hover{
+    background:#fff;
+}
+
+.pantalonesHombre .box-container .box:hover > *{
+    color:var(--black);
+}
+
+
+/* ------------------------------zapatosHombre----------------- */
+.zapatosHombre .box-container{
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap:1.5rem;
+}
+
+.zapatosHombre h1{
+    margin-top: 40px;
+}
+
+.zapatosHombre .box-container .box{
+    padding:5rem;
+    text-align: center;
+    border:var(--border);    
+}
+
+.zapatosHombre .box-container .box img{
+    height: 10rem;
+}
+
+.zapatosHombre .box-container .box h3{
+    color: #fff;
+    font-size: 2rem;
+    padding:1rem 0;
+}
+
+.zapatosHombre .box-container .box .price{
+    color: #fff;
+    font-size: 2.5rem;
+    padding:.5rem 0;
+}
+
+.zapatosHombre .box-container .box .price span{
+    font-size: 1.5rem;
+    text-decoration: line-through;
+    font-weight: lighter;
+}
+
+.zapatosHombre .box-container .box:hover{
+    background:#fff;
+}
+
+.zapatosHombre .box-container .box:hover > *{
+    color:var(--black);
+}
+
+
+/*-----------------------------CATALOGOMUJERES--------------------*/
+
+/* ------------------------------busosMujeres----------------- */
+
+
+.busosMujeres .box-container{
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap:1.5rem;
+}
+
+.busosMujeres h1{
+    margin-top: 120px;
+}
+
+.busosMujeres .box-container .box{
+    padding:5rem;
+    text-align: center;
+    border:var(--border);    
+}
+
+.busosMujeres .box-container .box img{
+    height: 10rem;
+}
+
+.busosMujeres .box-container .box h3{
+    color: #fff;
+    font-size: 2rem;
+    padding:1rem 0;
+}
+
+.busosMujeres .box-container .box .price{
+    color: #fff;
+    font-size: 2.5rem;
+    padding:.5rem 0;
+}
+
+.busosMujeres .box-container .box .price span{
+    font-size: 1.5rem;
+    text-decoration: line-through;
+    font-weight: lighter;
+}
+
+.busosMujeres .box-container .box:hover{
+    background:#fff;
+}
+
+.busosMujeres .box-container .box:hover > *{
+    color:var(--black);
+}
+
+/*------------------------------pantalonesMujeres---------------- */
+.pantalonesMujeres .box-container{
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap:1.5rem;
+}
+
+.pantalonesMujeres h1{
+    margin-top: 40px;
+}
+
+.pantalonesMujeres .box-container .box{
+    padding:5rem;
+    text-align: center;
+    border:var(--border);    
+}
+
+.pantalonesMujeres .box-container .box img{
+    height: 10rem;
+}
+
+.pantalonesMujeres .box-container .box h3{
+    color: #fff;
+    font-size: 2rem;
+    padding:1rem 0;
+}
+
+.pantalonesMujeres .box-container .box .price{
+    color: #fff;
+    font-size: 2.5rem;
+    padding:.5rem 0;
+}
+
+.pantalonesMujeres .box-container .box .price span{
+    font-size: 1.5rem;
+    text-decoration: line-through;
+    font-weight: lighter;
+}
+
+.pantalonesMujeres .box-container .box:hover{
+    background:#fff;
+}
+
+.pantalonesMujeres .box-container .box:hover > *{
+    color:var(--black);
+}
+
+
+/* ------------------------------zapatosMujeres----------------- */
+.zapatosMujeres .box-container{
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap:1.5rem;
+}
+
+.zapatosMujeres h1{
+    margin-top: 40px;
+}
+
+.zapatosMujeres .box-container .box{
+    padding:5rem;
+    text-align: center;
+    border:var(--border);    
+}
+
+.zapatosMujeres .box-container .box img{
+    height: 10rem;
+}
+
+.zapatosMujeres .box-container .box h3{
+    color: #fff;
+    font-size: 2rem;
+    padding:1rem 0;
+}
+
+.zapatosMujeres .box-container .box .price{
+    color: #fff;
+    font-size: 2.5rem;
+    padding:.5rem 0;
+}
+
+.zapatosMujeres .box-container .box .price span{
+    font-size: 1.5rem;
+    text-decoration: line-through;
+    font-weight: lighter;
+}
+
+.zapatosMujeres .box-container .box:hover{
+    background:#fff;
+}
+
+.zapatosMujeres .box-container .box:hover > *{
+    color:var(--black);
+}
+
+
+
+/* ------------------------- SUCURSAL ------------------------ */
+
+.sucursal {
+    margin-bottom: 100px;
+    background: var(--bg);
+    color: #fff;
+    padding: 2rem 7%;
+}
+
+.sucursal h3 {
+    margin-top: 150px;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.sucursal .box {
+    border: var(--border);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.sucursal .ubi {
+    border-top: var(--border);
+}
+
+.sucursal iframe {
+    width: 100%;
+    height: 390px;
+    border-radius: 5px;
+}
+
+/* ------------------------- PERFIL ------------------------ */
+
+.profile-options {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    top: 40px; /* Ajusta la posición vertical según sea necesario */
+    right: 0; /* Ajusta la posición horizontal según sea necesario */
+    z-index: 1000;
+}
+
+/* Estilo para las opciones del perfil */
+.profile-options a {
+    display: block;
+    padding: 5px 10px;
+    color: #333;
+    text-decoration: none;
+}
+
+.profile-options a:hover {
+    background-color: #f0f0f0;
+}
