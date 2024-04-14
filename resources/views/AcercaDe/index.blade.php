@@ -6,53 +6,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Isa Boutique and Fashion Style</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet" href="Views/Css/style.css">
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <script src="Views/js/script.js"></script>
 </head>
 
 <body>
-    <header class="header">
-
-        <a href="index.php" class="logo">
-            <img src="Views\img\ImagenesApoyo\isabelogo.jpeg" alt="">
-        </a>
-        
-        <nav class="navbar">
-            <a href="index.php">INICIO</a>
-            
-            <div class="dropdown">
-                <a href="#" class="dropbtn">CATALOGO</a>
-                <div class="dropdown-content">   
-                    <a href="Hombres.php"><i class="fas fa-male"></i> HOMBRES</a>
-                    <a href="Mujeres.php"><i class="fas fa-female"></i> MUJERES</a>
-                    <a href="Niños.php"><i class="fas fa-child"></i> NIÑOS</a>
-                </div>
-            </div>
-            <a href="Sucursal.php">SUCURSALES</a>
-            <a href="Contacto.php">CONTACTO</a>
-            <a href="About.php">ACERCA DE</a>
-        </nav>
-        
-        <div class="icons">
-            <div class="fas fa-search" id="search-btn"></div>
-            <div class="fas fa-shopping-cart" id="cart-btn"></div>
-            <div class="dropdown">
-                <button class="fas fa-user dropbtn" id="profile-btn"></button>
-                <div class="profile-options" id="profile-options">
-                    <a href="login.php">Identifícate</a>
-                    <a href="historial.php">Historial de Búsqueda</a>
-                </div>
-            </div>
-            <div class="fas fa-bars" id="menu-btn"></div>
-        </div>
-
-        <div class="search-form">
-            <input type="search" id="search-box" placeholder="search here...">
-            <label for="search-box" class="fas fa-search"></label>
-        </div>
-
-    </header>
+<header class="header">
+    <a href="{{ url('/') }}" class="logo">
+        <img src="{{ asset('img/isabelogo.jpeg') }}" alt="">
+    </a>
     
+    <nav class="navbar">
+        <a href="{{ url('/') }}">INICIO</a>
+        
+        <div class="dropdown">
+            <a href="#" class="dropbtn">CATALOGO</a>
+            <div class="dropdown-content">   
+                <a href="{{ url('Hombres.php') }}"><i class="fas fa-male"></i> HOMBRES</a>
+                <a href="{{ url('Mujeres.php') }}"><i class="fas fa-female"></i> MUJERES</a>
+                <a href="{{ url('Niños.php') }}"><i class="fas fa-child"></i> NIÑOS</a>
+            </div>
+        </div>
+        <a href="{{ url('Sucursal.php') }}">SUCURSALES</a>
+        <a href="{{ url('contacto') }}">CONTACTO</a>
+        <a href="{{ url('acercade') }}">ACERCA DE</a>
+    </nav>
+    
+    <div class="icons">
+        <div class="fas fa-search" id="search-btn"></div>
+        <div class="fas fa-shopping-cart" id="cart-btn"></div>
+        <div class="dropdown">
+            <button class="fas fa-user dropbtn" id="profile-btn"></button>
+            <div class="profile-options" id="profile-options">
+                <a href="{{ url('login.php') }}">Identifícate</a>
+                <a href="{{ url('historial.php') }}">Historial de Búsqueda</a>
+            </div>
+        </div>
+        <div class="fas fa-bars" id="menu-btn"></div>
+    </div>
+
+    <div class="search-form">
+        <input type="search" id="search-box" placeholder="search here...">
+        <label for="search-box" class="fas fa-search"></label>
+    </div>
+</header>
     
 
     <section class="about" id="about">
