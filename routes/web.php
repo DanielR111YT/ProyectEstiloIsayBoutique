@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\InicioController;
 use App\Http\Controllers\AcercadeController;
 use App\Http\Controllers\ContactoController;
+use App\Http\Controllers\SucursalController;
 
 // Ruta principal que muestra la vista de bienvenida
 Route::get('/', function () {
@@ -20,3 +21,5 @@ Route::get('/acercade', [AcercadeController::class, 'index'])->name('acercade');
 Route::get('/contacto', [ContactoController::class, 'index'])->name('contacto');
 Route::post('/contacto/guardar', [ContactoController::class, 'store'])->name('guardar_contacto');
 
+// Rutas para el controlador SucursalController
+Route::get('/sucursal', [SucursalController::class, 'index'])->name('sucursal');

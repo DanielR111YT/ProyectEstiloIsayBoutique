@@ -7,11 +7,8 @@
     <title style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Isa Boutique and Fashion Style</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-
-
 </head>
 <body>
-    
 <header class="header">
     <a href="{{ url('/') }}" class="logo">
         <img src="{{ asset('img/isabelogo.jpeg') }}" alt="">
@@ -52,27 +49,28 @@
     </div>
 </header>
 
-    <section class="home" id="home">
-        <div class="content">
-            <h2 class="text1">Descubre tu estilo único en nuestra tienda de moda</h2>
-            <h2 class="text2">Descubre tu estilo único en nuestra tienda de moda</h2>
-        </div>
-        <a href="Hombres.php" class="btn">Order now</a>
-    </section>
+    <div class="sucursal">
+        <h3>Direccion | 141- Sector, Cra. 45 Sur #1255, Ibagué, Tolima</h3>
+        <div class="box">
+            <div class="content-box">
+                <div class="ubi">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7956.109919553865!2d-75.1505249!3d4.4008193!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e38daac36ef33ef%3A0xc4167c4b60b14a15!2sSENA%20Centro%20de%20Industria%20y%20de%20la%20Construcci%C3%B3n!5e0!3m2!1ses-419!2sco!4v1710054179368!5m2!1ses-419!2sco" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div> 
+            </div>
+       </div>
+    </div>
 
+   <section class="footer">
 
-    <section class="footer">
-        <div class="share">
-            <a href="#" class="fab fa-facebook-f"></a>
-            <a href="#" class="fab fa-twitter"></a>
-            <a href="#" class="fab fa-instagram"></a>
-            <a href="#" class="fab fa-linkedin"></a>
-        </div>
+    <div class="share">
+        <a href="#" class="fab fa-facebook-f"></a>
+        <a href="#" class="fab fa-twitter"></a>
+        <a href="#" class="fab fa-instagram"></a>
+        <a href="#" class="fab fa-linkedin"></a>
+    </div>
 
-        <div class="credit">© 2024 isa boutique and fashion style | Todos los derechos reservados</div>
-    </section>
+    <div class="credit">© 2024 isa boutique and fashion style | Todos los derechos reservados</div>
 
-    
-
+</section>
 </body>
 </html>

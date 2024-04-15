@@ -27,7 +27,7 @@
                 <a href="{{ url('Niños.php') }}"><i class="fas fa-child"></i> NIÑOS</a>
             </div>
         </div>
-        <a href="{{ url('Sucursal.php') }}">SUCURSALES</a>
+        <a href="{{ url('sucursal') }}">SUCURSALES</a>
         <a href="{{ url('contacto') }}">CONTACTO</a>
         <a href="{{ url('acercade') }}">ACERCA DE</a>
     </nav>
